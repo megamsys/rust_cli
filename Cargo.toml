@@ -1,0 +1,36 @@
+[project]
+name = "rust-turbo"
+version = "0.1.0"
+authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
+description = "Wanna build easy cli using rust. Use this library to build a cargo like command line."
+
+documentation = "Build your command line using a simple action based popular command pattern. A handler exists for help. Abstracted action manager where you can pull your commands using macro_rules. An implementation using rust-easycli can be found at https://github.com/megamsys/meg.git"
+homepage = "https://www.megam.io"
+repository = "https://github.com/megamsys/rust-turbo"
+
+readme = "README.md"
+
+keywords = ["cli", "command", "megam"]
+
+license = "Apache-2.0"
+
+[dependencies]
+glob = "0.2.10"
+time = "0.1.24"
+log = "0.3.1"
+env_logger = "0.3"
+docopt = "0.6.62"
+rustc-serialize = "0.3.12"
+term = "0.2.7"
+regex = "0.1.29"
+
+[dev-dependencies]
+tempdir = "0.3.4"
+hamcrest = { git = "https://github.com/carllerche/hamcrest-rust.git" }
+
+
+[[test]]
+name = "tests"
+
+[[test]]
+name = "resolve"
