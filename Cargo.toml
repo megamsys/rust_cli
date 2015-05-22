@@ -14,15 +14,21 @@ keywords = ["cli", "command", "megam"]
 
 license = "Apache-2.0"
 
+[lib]
+name = "turbo"
+path = "src/turbo/lib.rs"
+
 [dependencies]
 glob = "0.2.10"
-time = "0.1.24"
+time = "0.1.25"
 log = "0.3.1"
-env_logger = "0.3"
-docopt = "0.6.62"
-rustc-serialize = "0.3.12"
+env_logger = "0.3.1"
+docopt = "0.6.64"
+rustc-serialize = "0.3.14"
 term = "0.2.7"
-regex = "0.1.29"
+regex = "0.1.30"
+libc = "0.1.8"
+
 
 [dev-dependencies]
 tempdir = "0.3.4"

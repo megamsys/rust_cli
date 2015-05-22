@@ -1,16 +1,10 @@
 use std::error::Error;
-use std::ffi;
 use std::fmt;
 use std::io;
 use std::process::{Output, ExitStatus};
 use std::str;
 
 use rustc_serialize::json;
-
-use curl;
-use git2;
-use toml;
-use url;
 
 pub type TurboResult<T> = Result<T, Box<TurboError>>;
 
@@ -250,34 +244,20 @@ macro_rules! from_error {
 }
 
 from_error! {
-    semver::ReqParseError,
     io::Error,
     ProcessError,
-    git2::Error,
     json::DecoderError,
-    curl::ErrCode,
     CliError,
-    toml::Error,
-    url::ParseError,
-    toml::DecodeError,
-    ffi::NulError,
 }
 
 impl<E: TurboError> From<Human<E>> for Box<TurboError> {
     fn from(t: Human<E>) -> Box<TurboError> { Box::new(t) }
 }
 
-impl TurboError for semver::ReqParseError {}
 impl TurboError for io::Error {}
-impl TurboError for git2::Error {}
 impl TurboError for json::DecoderError {}
-impl TurboError for curl::ErrCode {}
 impl TurboError for ProcessError {}
 impl TurboError for CliError {}
-impl TurboError for toml::Error {}
-impl TurboError for toml::DecodeError {}
-impl TurboError for url::ParseError {}
-impl TurboError for ffi::NulError {}
 
 // =============================================================================
 // Construction helpers
