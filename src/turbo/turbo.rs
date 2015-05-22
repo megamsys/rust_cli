@@ -1,15 +1,6 @@
-#![deny(unused)]
-#![feature(fs_time)]
-#![cfg_attr(test, deny(warnings))]
+extern crate libc;
 
-#[cfg(test)] extern crate hamcrest;
-#[macro_use] extern crate log;
-extern crate docopt;
-extern crate glob;
-extern crate rustc_serialize;
-extern crate term;
-extern crate time;
-
+use std;
 use std::env;
 use std::error::Error;
 use std::io::prelude::*;
@@ -21,7 +12,7 @@ use docopt::Docopt;
 use core::{Shell, MultiShell, ShellConfig};
 use term::color::{BLACK, RED};
 
-pub use util::{TurboError, CliError, CliResult, human, Config, ChainError};
+pub use util::{TurboError, CliError, CliResult, Config,human, ChainError};
 
 
 pub fn execute_main<T, U, V>(
@@ -76,16 +67,20 @@ fn process<V, F>(mut callback: F)
     where F: FnMut(&[String], &Config) -> CliResult<Option<V>>,
           V: Encodable
 {
-    let mut shell = shell(true);
-    process_executed((|| {
-        let config = try!(Config::new(&mut shell));
+    let mut config = None;
+    let result = (|| {
+        config = Some(try!(Config::new(shell(true))));
         let args: Vec<_> = try!(env::args_os().map(|s| {
             s.into_string().map_err(|s| {
                 human(format!("invalid unicode in argument: {:?}", s))
             })
         }).collect());
-        callback(&args, &config)
-    })(), &mut shell)
+        callback(&args, config.as_ref().unwrap())
+    })();
+    let mut verbose_shell = shell(true);
+    let mut shell = config.as_ref().map(|s| s.shell());
+    let shell = shell.as_mut().map(|s| &mut **s).unwrap_or(&mut verbose_shell);
+    process_executed(result, shell)
 }
 
 pub fn process_executed<T>(result: CliResult<Option<T>>, shell: &mut MultiShell)
@@ -97,7 +92,7 @@ pub fn process_executed<T>(result: CliResult<Option<T>>, shell: &mut MultiShell)
             let encoded = json::encode(&encodable).unwrap();
             println!("{}", encoded);
         }
-        _ => {}
+        Ok(None) => {}
     }
 }
 
@@ -205,6 +200,7 @@ fn flags_from_args<'a, T>(usage: &str, args: &[String],
     })
 }
 
+
 fn json_from_stdin<T: Decodable>() -> CliResult<T> {
     let mut reader = io::stdin();
     let mut input = String::new();
@@ -220,4 +216,8 @@ fn json_from_stdin<T: Decodable>() -> CliResult<T> {
     Decodable::decode(&mut decoder).map_err(|_| {
         CliError::new("Could not process standard in as input", 1)
     })
+}
+
+fn version() -> String {
+    String::from("<0!0>")
 }

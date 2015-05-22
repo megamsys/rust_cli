@@ -1,3 +1,4 @@
+pub use self::config::Config;
 pub use self::process_builder::{process, ProcessBuilder};
 pub use self::errors::{TurboResult, TurboError, ChainError, CliResult};
 pub use self::errors::{CliError, ProcessError};
@@ -6,3 +7,4 @@ pub use self::errors::{Human, caused_human};
 
 pub mod errors;
 pub mod process_builder;
+pub mod config;
