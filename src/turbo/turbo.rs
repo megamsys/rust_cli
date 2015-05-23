@@ -1,5 +1,4 @@
-extern crate libc;
-
+use libc;
 use std;
 use std::env;
 use std::error::Error;

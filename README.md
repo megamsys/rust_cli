@@ -1,7 +1,7 @@
-rust-turbo is an action based command library. This can be used to build command line with ease.
-This is inspired and an abstract framework from cargo.
+## rust-turbo
+Is an action based command library. This can be used to build command line with ease. This is inspired from `cargo`, and essentially a best practice of writing cli grabbed from `cargo`.
 
-We have used to build our command line[meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
+We have used to`rust-turbo` to build our command line[meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
 
 Learn more at http://doc.megam.io/
 
