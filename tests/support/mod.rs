@@ -1,12 +1,8 @@
-extern crate libturbo;
+extern crate turbo;
 
-use std::env;
 use std::error::Error;
-use std::ffi::OsStr;
 use std::fmt;
-use std::fs;
 use std::io::prelude::*;
-use std::path::{Path, PathBuf};
 use std::process::Output;
 use std::str;
 
@@ -33,8 +29,7 @@ pub struct Execs {
 }
 
 impl Execs {
-
-    pub fn with_stdout<S: ToString>(mut self, expected: S) -> Execs {
+/*    pub fn with_stdout<S: ToString>(mut self, expected: S) -> Execs {
         self.expect_stdout = Some(expected.to_string());
         self
     }
@@ -48,7 +43,7 @@ impl Execs {
         self.expect_exit_code = Some(expected);
         self
     }
-
+*/
     fn match_output(&self, actual: &Output) -> ham::MatchResult {
         self.match_status(actual)
             .and(self.match_stdout(actual))
@@ -199,7 +194,7 @@ impl<'a> ham::Matcher<&'a mut ProcessBuilder> for Execs {
         }
     }
 }
-
+/*
 pub fn execs() -> Execs {
     Execs {
         expect_stdout: None,
@@ -208,7 +203,7 @@ pub fn execs() -> Execs {
         expect_exit_code: None
     }
 }
-
+*/
 #[derive(Clone)]
 pub struct ShellWrites {
     expected: String
@@ -244,7 +239,7 @@ impl<T> Tap for T {
         self
     }
 }
-
+/*
 pub fn basic_bin_manifest(name: &str) -> String {
     format!(r#"
         [package]
@@ -284,3 +279,4 @@ pub static DOWNLOADING: &'static str = " Downloading";
 pub static UPLOADING:   &'static str = "   Uploading";
 pub static VERIFYING:   &'static str = "   Verifying";
 pub static ARCHIVING:   &'static str = "   Archiving";
+*/

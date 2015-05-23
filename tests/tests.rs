@@ -1,7 +1,5 @@
-#![feature(fs, fs_ext, path_ext, fs_time, fs_walk)]
-
 extern crate rustc_serialize;
-extern crate libturbo;
+extern crate turbo;
 extern crate hamcrest;
 extern crate term;
 extern crate tempdir;
