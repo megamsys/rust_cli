@@ -4,12 +4,12 @@ use std::sync::{Arc, Mutex};
 use term::{Terminal, TerminfoTerminal, color};
 use hamcrest::{assert_that};
 
-use meg::core::shell::{Shell,ShellConfig};
+use turbo::core::shell::{Shell,ShellConfig};
 
 use support::{Tap, shell_writes};
 
-fn setup() {
-}
+/*fn setup() {
+}*/
 
 struct Sink(Arc<Mutex<Vec<u8>>>);
 
