@@ -25,11 +25,11 @@ test!(non_tty {
     let a = Arc::new(Mutex::new(Vec::new()));
 
     Shell::create(Box::new(Sink(a.clone())), config).tap(|shell| {
-        shell.say("Hey Alex", color::RED).unwrap();
+        shell.say("Hey Megam", color::RED).unwrap();
     });
 
     let buf = a.lock().unwrap().clone();
-    assert_that(&buf[..], shell_writes("Hey Alex\n"));
+    assert_that(&buf[..], shell_writes("Hey Megam\n"));
 });
 
 test!(color_explicitly_disabled {
@@ -37,10 +37,10 @@ test!(color_explicitly_disabled {
     let a = Arc::new(Mutex::new(Vec::new()));
 
     Shell::create(Box::new(Sink(a.clone())), config).tap(|shell| {
-        shell.say("Hey Alex", color::RED).unwrap();
+        shell.say("Hey Megam", color::RED).unwrap();
     });
     let buf = a.lock().unwrap().clone();
-    assert_that(&buf[..], shell_writes("Hey Alex\n"));
+    assert_that(&buf[..], shell_writes("Hey Megam\n"));
 });
 
 test!(colored_shell {
@@ -51,11 +51,11 @@ test!(colored_shell {
     let a = Arc::new(Mutex::new(Vec::new()));
 
     Shell::create(Box::new(Sink(a.clone())), config).tap(|shell| {
-        shell.say("Hey Alex", color::RED).unwrap();
+        shell.say("Hey Megam", color::RED).unwrap();
     });
     let buf = a.lock().unwrap().clone();
     assert_that(&buf[..],
-                shell_writes(colored_output("Hey Alex\n",
+                shell_writes(colored_output("Hey Megam\n",
                                             color::RED).unwrap()));
 });
 

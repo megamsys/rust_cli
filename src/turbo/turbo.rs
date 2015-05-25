@@ -4,6 +4,7 @@ use std::env;
 use std::error::Error;
 use std::io::prelude::*;
 use std::io;
+
 use rustc_serialize::{Decodable, Encodable};
 use rustc_serialize::json::{self, Json};
 use docopt::Docopt;
