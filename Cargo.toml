@@ -3,10 +3,10 @@ name = "rust-turbo"
 version = "0.1.0"
 authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
 description = """Wanna build easy cli using rust. Use this library to build a cargo like command line.
-Build your command line using a simple action based command pattern.
+Build your command line using the command pattern.
 - built in handler for help. 
 Abstracted action manager where you can pull your commands using macro_rules.
-An implementation using rust-easycli can be found at https://github.com/megamsys/meg.git
+An implementation using rust-turbo can be found at https://github.com/megamsys/meg.git
 """
 
 documentation = "https://github.com/megamsys/rust-turbo"
