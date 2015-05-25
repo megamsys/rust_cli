@@ -1,9 +1,11 @@
 ## rust-turbo
-Is an action based command library. This can be used to build command line with ease. This is inspired from `cargo`, and essentially a best practice of writing cli grabbed from `cargo`.
 
-We have used to`rust-turbo` to build our command line[meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
+Command line(cli) follows a command patterns where a command manager attaches all the subcommands it needs to process. There are standard flags (-v version, -h help) that are written as part of the cli. 
 
-Learn more at http://doc.megam.io/
+So we grabbed the best practice from `cargo` which will be used as a common library in our cli`s (servers to anything...).
+You can see `rust-turbo` in action in our cli [meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
+
+Learn more at http://docs.megam.io/v1.0/docs/megam_quick_launch
 
 ## Installing rust-turbo to build your next cli.
 
@@ -11,11 +13,13 @@ We will write a [devcenter](http://devcenter.megam.io) article next week.
 
 
 ## Using this crate
+
 We will write a [devcenter](http://devcenter.megam.io) article next week.
 
 
 
 ## Adding new subcommands to your cli
+
 We will write a [devcenter](http://devcenter.megam.io) article next week.
 
 

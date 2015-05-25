@@ -6,5 +6,5 @@ pub use self::errors::{process_error, internal_error, internal, human};
 pub use self::errors::{Human, caused_human};
 
 pub mod errors;
-pub mod process_builder;
-pub mod config;
+mod process_builder;
+mod config;
