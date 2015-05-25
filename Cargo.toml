@@ -1,11 +1,8 @@
 [project]
 name = "rust-turbo"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
-description = """Wanna build easy cli using rust. Use this library to build a cargo like command line.
-Build your command line using the command pattern.
-- built in handler for help. 
-Abstracted action manager where you can pull your commands using macro_rules.
+description = """Use this library to build a cargo like command line using the command pattern.
 An implementation using rust-turbo can be found at https://github.com/megamsys/meg.git
 """
 
@@ -37,8 +34,10 @@ libc = "0.1.8"
 
 [dev-dependencies]
 tempdir = "0.3.4"
-hamcrest = { git = "https://github.com/carllerche/hamcrest-rust.git" }
 
+[dependencies.hamcrest]
+
+git = "https://github.com/carllerche/hamcrest-rust.git"
 
 [[test]]
 name = "tests"
