@@ -1,6 +1,6 @@
 [project]
-name = "rust_ci"
-version = "0.2.0"
+name = "rust_cli"
+version = "0.1.0"
 authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
 description = """
 A mixin for creating command line applications - gives an easy interface for argument specification and processing used by https://www.megam.io
