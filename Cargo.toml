@@ -1,18 +1,20 @@
 [project]
-name = "rust-turbo"
+name = "rust_ci"
 version = "0.2.0"
 authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
-description = """Use this library to build a cargo like command line using the command pattern.
-An implementation using rust-turbo can be found at https://github.com/megamsys/meg.git
+description = """
+A mixin for creating command line applications - gives an easy interface for argument specification and processing used by https://www.megam.io
+https://www.megam.io.
+An implementation using rust_cli can be found at https://github.com/megamsys/meg.git
 """
 
-documentation = "https://github.com/megamsys/rust-turbo"
+documentation = "https://github.com/megamsys/rust_cli"
 homepage = "https://www.megam.io"
-repository = "https://github.com/megamsys/rust-turbo"
+repository = "https://github.com/megamsys/rust_cli"
 
 readme = "README.md"
 
-keywords = ["cli", "command", "megam"]
+keywords = ["cli", "command", "megam", "mixin_cli"]
 
 license = "Apache-2.0"
 
@@ -35,9 +37,8 @@ libc = "0.1.8"
 [dev-dependencies]
 tempdir = "0.3.4"
 
-[dependencies.hamcrest]
-
-git = "https://github.com/carllerche/hamcrest-rust.git"
+#[dependencies.hamcrest]
+#git = "https://github.com/carllerche/hamcrest-rust.git"
 
 [[test]]
 name = "tests"

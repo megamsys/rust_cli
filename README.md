@@ -1,6 +1,8 @@
-## rust-turbo
+## rust_cli
 
-Command line(cli) follows a command patterns where a command manager attaches all the subcommands it needs to process. There are standard flags (-v version, -h help) that are written as part of the cli. 
+Command line(cli) follows a command patterns where a command manager attaches all the subcommands it needs to process. There are standard flags (-v version, -h help) that are written as part of the cli.
+
+rust-cli is a mixin for creating command line applications - gives an easy interface for argument specification and processing used by https://console.megam.io
 
 So we grabbed the best practice from `cargo` which will be used as a common library in our cli`s (servers to anything...).
 You can see `rust-turbo` in action in our cli [meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
@@ -9,13 +11,12 @@ Learn more at http://docs.megam.io/v1.0/docs/megam_quick_launch
 
 ## Installing rust-turbo to build your next cli.
 
-We will write a [devcenter](http://devcenter.megam.io) article next week.
+Read this [devcenter](http://devcenter.megam.io/2015/05/25/rust/) to get started with rust.
 
 
 ## Using this crate
 
 We will write a [devcenter](http://devcenter.megam.io) article next week.
-
 
 
 ## Adding new subcommands to your cli
