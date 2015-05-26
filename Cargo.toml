@@ -1,9 +1,11 @@
 [project]
-name = "rust-turbo"
-version = "0.2.0"
+name = "rust_ci"
+version = "0.1.0"
 authors = ["Kishorekumar Neelamegam <nkishore@megam.io>"]
-description = """Use this library to build a cargo like command line using the command pattern.
-An implementation using rust-turbo can be found at https://github.com/megamsys/meg.git
+description = """
+A mixin for creating command line applications - gives an easy interface for argument specification and processing used by https://www.megam.io
+https://www.megam.io.
+An implementation using rust_cli can be found at https://github.com/megamsys/meg.git
 """
 
 documentation = "https://github.com/megamsys/rust-turbo"
@@ -12,7 +14,7 @@ repository = "https://github.com/megamsys/rust-turbo"
 
 readme = "README.md"
 
-keywords = ["cli", "command", "megam"]
+keywords = ["cli", "command", "megam", "mixin::cli"]
 
 license = "Apache-2.0"
 
