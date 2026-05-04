@@ -7,21 +7,21 @@ rust-cli is a mixin for creating command line applications - gives an easy inter
 So we grabbed the best practice from `cargo` which will be used as a common library in our cli`s (servers to anything...).
 You can see `rust-turbo` in action in our cli [meg](https://github.com/megamsys/meg.git) for launching [Megam](https://www.megam.io).
 
-Learn more at http://docs.megam.io/v1.0/docs/megam_quick_launch
+Learn more at https://megam.io/v1.0/docs/megam_quick_launch
 
 ## Installing rust-turbo to build your next cli.
 
-Read this [devcenter](http://devcenter.megam.io/2015/05/25/rust/) to get started with rust.
+Read this [devcenter](https://megam.io/2015/05/25/rust/) to get started with rust.
 
 
 ## Using this crate
 
-We will write a [devcenter](http://devcenter.megam.io) article next week.
+We will write a [devcenter](https://megam.io) article next week.
 
 
 ## Adding new subcommands to your cli
 
-We will write a [devcenter](http://devcenter.megam.io) article next week.
+We will write a [devcenter](https://megam.io) article next week.
 
 
 We are glad to help if you have questions, or request for new features..
